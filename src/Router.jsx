@@ -1,5 +1,5 @@
-import { Children, useEffect, useState } from "react";
 import { match } from 'path-to-regexp';
+import { Children, useEffect, useState } from "react";
 import { EVENTS } from "./consts.js";
 
 const Router = ({children, routes = [], defaultComponent: DefaultComponent = () => null}) =>

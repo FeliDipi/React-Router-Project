@@ -1,11 +1,11 @@
 import { Suspense, lazy } from 'react';
 
-import './App.css'
+import './App.css';
 import Page404 from './Pages/Page404.jsx';
 import Search from './Pages/Search.jsx';
 
-import Router from './Router.jsx';
 import Route from './Route.jsx';
+import Router from './Router.jsx';
 
 const Home = lazy(()=>import('./Pages/Home.jsx'));
 const About = lazy(()=>import('./Pages/About.jsx'));
