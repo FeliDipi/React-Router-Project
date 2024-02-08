@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { Children, useEffect, useState } from "react";
 import { match } from 'path-to-regexp';
 import { EVENTS } from "./consts.js";
 
-export const Router = ({routes = [], defaultComponent: DefaultComponent = () => null}) =>
+const Router = ({children, routes = [], defaultComponent: DefaultComponent = () => null}) =>
 {
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
@@ -26,7 +26,17 @@ export const Router = ({routes = [], defaultComponent: DefaultComponent = () => 
 
   let routeParams = {}
 
-  const Page = routes.find(({path}) => {
+  const routeFromChildren = Children.map(children , ({props, type})=>
+  {
+    const {name} = type;
+    const isRoute = name === "Route";
+
+    return isRoute? props : null;    
+  });
+
+  const routeToUse = routes.concat(routeFromChildren);
+
+  const Page = routeToUse.find(({path}) => {
     if(path === currentPath) return true;
 
     const matchUrl = match(path, {decode : decodeURIComponent});
@@ -41,3 +51,5 @@ export const Router = ({routes = [], defaultComponent: DefaultComponent = () => 
 
   return Page ? <Page routeParams={routeParams}/>: <DefaultComponent routeParams={routeParams}/>;
 }
+
+export default Router;

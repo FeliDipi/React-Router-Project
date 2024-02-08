@@ -1,6 +1,6 @@
-import { Link } from "../Link.jsx"
+import Link from "../Link.jsx"
 
-export const About = () =>
+const About = () =>
 {
   return (
     <>
@@ -13,3 +13,5 @@ export const About = () =>
     </>
   )
 }
+
+export default About;

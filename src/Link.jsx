@@ -1,6 +1,6 @@
 import { EVENTS } from './consts.js';
 
-export const navigate = (href) =>
+const navigate = (href) =>
 {
   window.history.pushState({},'',href);
 
@@ -9,7 +9,7 @@ export const navigate = (href) =>
   window.dispatchEvent(navigationEvent);
 }
 
-export const Link = ({target, to, ...props}) =>
+const Link = ({target, to, ...props}) =>
 {
     const handleClick = (event) =>
     {
@@ -28,3 +28,5 @@ export const Link = ({target, to, ...props}) =>
         <a onClick={handleClick} href={to} target={target} {...props}/>
     )
 }
+
+export default Link;

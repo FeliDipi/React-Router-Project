@@ -1,6 +1,6 @@
-import { Link } from "../Link.jsx"
+import Link from "../Link.jsx"
 
-export const Page404 = () =>
+const Page404 = () =>
 {
   return (
     <>
@@ -12,3 +12,5 @@ export const Page404 = () =>
     </>
   )
 }
+
+export default Page404;

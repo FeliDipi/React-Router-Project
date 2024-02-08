@@ -1,6 +1,6 @@
-import { Link } from "../Link.jsx"
+import Link from "../Link.jsx"
 
-export const Home = () =>
+const Home = () =>
 {
   return (
     <>
@@ -10,3 +10,5 @@ export const Home = () =>
     </>
   )
 }
+
+export default Home;

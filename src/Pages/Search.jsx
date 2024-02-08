@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-export const Search = ({routeParams}) =>
+const Search = ({routeParams}) =>
 {
     const searchTitle = `You has been search ${routeParams.query}`;
 
@@ -13,3 +13,5 @@ export const Search = ({routeParams}) =>
         <h1>{searchTitle}</h1>
     )
 }
+
+export default Search;
